@@ -1,4 +1,3 @@
-
 function permutationSort(a) {
     var count = 1;
     var n = a.length
@@ -18,6 +17,7 @@ function permutationSort(a) {
         for(var j = i; c[j] >= j; j++) {c[i++] = 0;}
     }
     return count; 
+
 }
 
 function isSorted(a) {
