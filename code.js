@@ -17,7 +17,7 @@ function permutationSort(a) {
         count++;
         c[i]++;
         i=1;
-        console.log(a)
+        //console.log(a)
         for(var j = i; c[j] >= j; j++) {c[i++] = 0; }
     }
     
@@ -32,7 +32,7 @@ function isSorted(a) {
     return true;
 }
 
-console.log(permutationSort([1,2,4,3]))
+//console.log(permutationSort([1,2,4,3]))
 //console.log(permutationSort([2,1,3]))
 //console.log(permutationSort([3,1,2]))
 //console.log(permutationSort([1,3,2]))
