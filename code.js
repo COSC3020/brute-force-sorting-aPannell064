@@ -1,20 +1,22 @@
 function permutationSort(a) {
     var count = 1;
     var n = a.length
-    var c = new Array(n).fill(0);
+    //Array tracks number of swaps in each position at each level
+    var swaps = new Array(n).fill(0);
     var i = 1;
     
     while(i < n) {
         if(isSorted(a)) {return count;}
 
         if(i%2 == 0) {[a[0], a[i]] = [a[i], a[0]];}
-        else {[a[c[i]], a[i]] = [a[i], a[c[i]]];}
+        else {[a[swaps[i]], a[i]] = [a[i], a[swaps[i]]];}
 
         count++;
-        c[i]++;
+        swaps[i]++;
         i=1;
 
-        for(var j = i; c[j] >= j; j++) {c[i++] = 0;}
+        //Resets the values in swaps when they exceed their indexes
+        while(swaps[i] >= i && i < n) {swaps[i++] = 0;}
     }
     return count; 
 }
